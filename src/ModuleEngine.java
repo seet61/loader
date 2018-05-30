@@ -5,7 +5,7 @@ import java.io.File;
 
 public class ModuleEngine {
     public static void main(String args[]) {
-        String modulePath = "c:\\Projects\\loader\\out\\production\\loader\\data";
+        String modulePath = "c:\\Projects\\loader\\out\\production\\loader";
         /**
          * Создаем загрузчик модулей.
          */
@@ -22,17 +22,16 @@ public class ModuleEngine {
          */
         for (String module: modules) {
             try {
-                System.out.println(module);
                 String moduleName = module.split(".class")[0];
                 Class clazz = loader.loadClass(moduleName);
-                /*
+
                 Module execute = (Module) clazz.newInstance();
 
                 execute.load();
                 execute.run();
                 execute.unload();
-                */
-            } catch (ClassNotFoundException e) {
+
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             /*

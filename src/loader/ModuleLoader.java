@@ -16,8 +16,9 @@ public class ModuleLoader extends ClassLoader {
             /**
              * Получем байт-код из файла и загружаем класс в рантайм
              */
-            System.out.println(new File(pathToBin, className + ".class"));
-            byte b[] = fetchClassFromFS((new File(pathToBin, className + ".class")).toString());
+            File f = new File(pathToBin, className + ".class");
+            System.out.println(f.toString());
+            byte b[] = fetchClassFromFS(f.toString());
             return defineClass(className, b, 0, b.length);
         } catch (FileNotFoundException ex) {
             return super.findClass(className);
@@ -26,6 +27,7 @@ public class ModuleLoader extends ClassLoader {
         }
     }
 
+    //http://www.ilnurgi1.ru/docs/java/java/lang/ClassLoader.html
     private byte[] fetchClassFromFS(String path) throws FileNotFoundException, IOException {
         InputStream is = new FileInputStream(new File(path));
 
