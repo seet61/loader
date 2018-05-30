@@ -1,7 +1,3 @@
-package impl;
-
-import data.Module;
-
 public class ModulePrinter implements Module {
     @Override
     public void load() {
@@ -16,6 +12,6 @@ public class ModulePrinter implements Module {
 
     @Override
     public void unload() {
-        System.out.println("Module " + this.getClass() + " inloading ...");
+        System.out.println("Module " + this.getClass() + " unloading ...");
     }
 }

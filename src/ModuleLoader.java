@@ -1,5 +1,3 @@
-package loader;
-
 import java.io.*;
 
 public class ModuleLoader extends ClassLoader {

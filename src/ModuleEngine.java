@@ -1,6 +1,3 @@
-import data.Module;
-import loader.ModuleLoader;
-
 import java.io.File;
 
 public class ModuleEngine {
@@ -32,7 +29,7 @@ public class ModuleEngine {
                 execute.unload();
 
             } catch (Exception e) {
-                e.printStackTrace();
+                //e.printStackTrace();
             }
             /*
             catch (InstantiationException e) {
